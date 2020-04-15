@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'AppController@index')->name('welcome');
+
+Auth::routes();
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('/home', 'AppController@home')->name('home');
+    Route::resource('/planner', 'PlannerController');
 });

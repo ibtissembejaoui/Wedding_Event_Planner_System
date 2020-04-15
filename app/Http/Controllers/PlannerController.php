@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Planner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PlannerController extends Controller
 {
@@ -14,7 +15,8 @@ class PlannerController extends Controller
      */
     public function index()
     {
-        //
+        $planners = Planner::all();
+        return view('planners.index', compact('planners'));
     }
 
     /**
@@ -24,7 +26,7 @@ class PlannerController extends Controller
      */
     public function create()
     {
-        //
+        return view('planners.create');
     }
 
     /**

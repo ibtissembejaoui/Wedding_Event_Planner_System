@@ -16,6 +16,7 @@ class CreatePlannersTable extends Migration
         Schema::create('planners', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('photo');
             $table->string('phone');
             $table->string('email');
             $table->string('adress');
