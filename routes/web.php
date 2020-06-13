@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/','AppController@index');
+Route::get('/event/confirmed','AppController@confirmed')->middleware('auth');;
+
+Auth::routes();
+
+Route::middleware('auth')->group(function () {
+    Route::get('/home', 'AppController@home')->name('home');
+    Route::resource('/event', 'EventController');
 });

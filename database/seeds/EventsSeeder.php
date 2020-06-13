@@ -1,8 +1,9 @@
 <?php
 
-use App\Payment;
+use App\Event;
 use Illuminate\Database\Seeder;
-class PaymentsSeeder extends Seeder
+
+class EventsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class PaymentsSeeder extends Seeder
      */
     public function run()
     {
-        factory(Payment::class, 10)->create();
+        factory(Event::class, 10)->create();
     }
 }

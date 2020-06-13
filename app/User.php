@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'address', 'phone'
     ];
 
     /**
@@ -38,9 +38,9 @@ class User extends Authenticatable
     ];
 
 
-    public function bookings()
+    public function events()
     {
-        return $this->hasMany('App\Booking');
+        return $this->hasMany('App\Event');
     }
 
 }
