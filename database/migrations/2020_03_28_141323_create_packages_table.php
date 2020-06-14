@@ -15,14 +15,14 @@ class CreatePackagesTable extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('planner_id')->unsigned();
-            $table->string('package_name');
+            $table->bigInteger('user_id')->unsigned();
             $table->string('package_type');
+            $table->string('photo');
             $table->date('package_date');
-            $table->text('package_description');
-            $table->double('package_amount',8,3);
+            $table->string('package_description');
+            $table->double('package_amount');
             $table->timestamps();
-            $table->foreign('planner_id')->references('id')->on('planners');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

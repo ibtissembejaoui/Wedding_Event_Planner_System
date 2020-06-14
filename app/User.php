@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','adress','phone','role'
+        'name', 'email', 'password','adress','phone'
     ];
 
     /**
@@ -37,10 +37,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function isAdmin(){
-        if($this->role == 'admin'){
-            return true;
-        }
-        return false;
+    public function Package(){
+        return  $this->hasMany('App\Package');
+     }
+     
+     public function events()
+    {
+        return $this->hasMany('App\Event');
     }
+
+    
 }

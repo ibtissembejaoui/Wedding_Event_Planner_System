@@ -20,7 +20,6 @@ class CreatePlannersTable extends Migration
             $table->string('phone');
             $table->string('email');
             $table->string('adress');
-            $table->string('password');
             $table->timestamps();
         });
     }

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Planner;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class PlannerController extends Controller
@@ -16,7 +17,7 @@ class PlannerController extends Controller
     public function index()
     {
         $planners = Planner::all();
-        return view('planners.index', compact('planners'));
+        return view('admin/planners.index', compact('planners'));
     }
 
     /**
@@ -26,7 +27,7 @@ class PlannerController extends Controller
      */
     public function create()
     {
-        return view('planners.create');
+        return view('admin/planners.create');
     }
 
     /**
@@ -37,7 +38,19 @@ class PlannerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate($this->validationRules());
+
+        $planner = new Planner;
+
+        $planner->name = $request->name;
+        $planner->photo = $request->photo;
+        $planner->phone = $request->phone;
+        $planner->email = $request->email;
+        $planner->adress = $request->adress;
+
+        $planner->save();
+
+        return redirect()->route('planner.index')->with('AddPlanner', 'New planner was added successfully');
     }
 
     /**
@@ -48,7 +61,7 @@ class PlannerController extends Controller
      */
     public function show(Planner $planner)
     {
-        //
+        return view('admin/planners.show', compact('planner'));
     }
 
     /**
@@ -59,7 +72,7 @@ class PlannerController extends Controller
      */
     public function edit(Planner $planner)
     {
-        //
+        return view('admin/planners.edit', compact('planner'));
     }
 
     /**
@@ -71,7 +84,11 @@ class PlannerController extends Controller
      */
     public function update(Request $request, Planner $planner)
     {
-        //
+        $validatedData = $request->validate($this->validationRules());
+
+        $planner->update($validatedData);
+
+        return redirect()->route('planner.index', $planner->id)->with('UpdatePlanner', 'Planner updated successfully');
     }
 
     /**
@@ -82,6 +99,19 @@ class PlannerController extends Controller
      */
     public function destroy(Planner $planner)
     {
-        //
+        $planner->delete();
+
+        return redirect()->route('planner.index')->with('deletePlanner', 'Planner deleted successfully');
+    }
+
+    private function validationRules()
+    {
+        return [
+            'name' => 'required',
+            'phone' => 'required',
+            'photo' => 'required',
+            'email' => 'required',
+            'adress' => 'required'
+        ];
     }
 }

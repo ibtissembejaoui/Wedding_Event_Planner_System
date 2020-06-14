@@ -6,8 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Package extends Model
 {
-    public function planner()
-    {
-        return $this->belongsTo('App\Planner');
+    protected $guarded = [];
+    
+    protected $dates = [
+        'package_date'
+    ];
+
+
+    public function User(){
+        return $this->belongsTo('App\User');
     }
 }
