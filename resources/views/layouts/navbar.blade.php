@@ -45,9 +45,6 @@
                                     </li>
                                     <li class="nav-item"><a href="{{ route('packages.index') }}" class="nav-link">Packages</a></li>
                                 @else
-                                    <li class="nav-item">
-                                        <a href="{{ url('/mypackage') }}" class="nav-link">my packages</a>
-                                    </li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('packages.index') }}">Our Packages</a></li>
                                     <li class="nav-item">
                                         <a href="{{ route('event.index') }}" class="nav-link">My events</a>

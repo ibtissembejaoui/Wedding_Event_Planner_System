@@ -42,11 +42,11 @@ class PackageController extends Controller
         return view('package.index',compact('packages'));
     }
     
-    public function mypackage(){
+    /*public function mypackage(){
         $packages=Auth::user()->Package()->get();
         //return $packages;
         return view('package.mypackage',compact('packages'));
-    }
+    }*/
 
     /**
      * Show the form for creating a new resource.

@@ -3,7 +3,13 @@
 @section('title', 'About confirmation')
 
 @section('content')
-
+<div class="container">
+    <fieldset>
+    <div class="text-center">
+		  <span class="subheading text-dark"><b><i>About</i></b></span>
+		<h2 class="mb-4 text-dark"><i>Confirmation</i></h2>
+</div>
+<br>
     <div class="row">
       <div class="col">
         <h3>Confirmed events</h3>

@@ -3,7 +3,14 @@
 @section('title', 'My events')
 
 @section('content')
-
+<main role="main">
+<div class="container">
+    <fieldset>
+    <div class="text-center">
+		  <span class="subheading text-dark"><b><i>My</i></b></span>
+		<h2 class="mb-4 text-dark"><i>Events</i></h2>
+</div>
+<br>
 @if (session('AddEvent'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     {{ session('AddEvent') }}
@@ -21,8 +28,7 @@
     </button>
 </div>
 @endif
-
-    <a href="{{ route('event.create') }}" class="btn btn-info  float-right" role="button" aria-pressed="true">Add event now !</a>
+<a href="{{ route('event.create') }}" class="btn btn-outline-primary btn-lg float-right" role="button" aria-pressed="true">Add event now !</a>
     <h1>List of my events</h1>
     <div class="row">
       <div class="col">

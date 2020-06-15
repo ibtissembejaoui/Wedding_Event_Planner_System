@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+    
 @if (session('updateEvent'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     {{ session('updateEvent') }}
@@ -13,26 +13,27 @@
 
 <main role="main">
 <div class="container">
-
-<div class="text-center">
-		  <span class="subheading text-dark"><b><i>Your</i></b></span>
-		<h2 class="mb-4 text-dark"><i>Event</i></h2>
-	  </div>
+    <fieldset>
+    <div class="text-center">
+		  <span class="subheading text-dark"><b><i>Event</i></b></span>
+		<h2 class="mb-4 text-dark"><i>Details</i></h2>
+</div>
 <br>
-    <table class="table table-hover bg-white">
-    <thead style="color: red">
+
+<table class="table table-hover">
+    <thead>
       <tr>
-        <th>Event type</th>
-        <th> Date</th>
-        <th> Time</th>
-        <th> Place</th>
-        <th>Decoration</th>
-        <th> Food</th>
-        <th> Guests number </th>
-        <th> Operations </th>
+        <th scope="col">Event type</th>
+        <th scope="col"> Date</th>
+        <th scope="col"> Time</th>
+        <th scope="col"> Place</th>
+        <th scope="col">Decoration</th>
+        <th scope="col"> Food</th>
+        <th scope="col"> Guests number </th>
+        <th scope="col"> Operations </th>
       </tr>
     </thead>
-    <tbody style="color: black">
+    <tbody>
       <tr>
         <td> {{ $event->event_type}}</td>
         <td> {{ $event->event_date->format('d/m/Y') }}</td>
@@ -42,12 +43,13 @@
         <td> {{ $event->event_food}}</td>
         <td> {{ $event->guests_number}}</td>
         <td>
-            <a href="{{ route('event.edit', $event->id) }}" class="btn btn-sm btn-danger">Edit</a>
-            <a href="#" class="btn btn-sm btn-secondary"  data-toggle="modal" data-target="#confirmDeleteModal">Delete</a>      
+            <a href="{{ route('event.edit', $event->id) }}" class="btn btn-outline-info">Edit</a>
+            <a href="#" class="btn btn-outline-danger"  data-toggle="modal" data-target="#confirmDeleteModal">Delete</a>      
         </td>
       </tr>
     </tbody>
   </table>
+
 
 <!-- Modal -->
 <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

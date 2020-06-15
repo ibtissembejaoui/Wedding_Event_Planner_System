@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 14 juin 2020 à 17:05
+-- Généré le :  lun. 15 juin 2020 à 11:55
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `events` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `events_user_id_foreign` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `events`
@@ -71,7 +71,10 @@ INSERT INTO `events` (`id`, `user_id`, `event_type`, `event_date`, `event_time`,
 (19, 3, 'fiancailles', '2020-06-15', '18:47:00', 'hjjkk', 'ghjk', 'cvbbn', 6, 0, '2020-06-14 09:42:00', '2020-06-14 09:42:00'),
 (21, 2, 'cvbnsdfg', '2020-06-14', '14:08:00', 'cvvbn', 'hjuttr', 'mlkhgfdsze', 6, 0, '2020-06-14 11:09:06', '2020-06-14 11:09:06'),
 (22, 2, 'dffghj', '2020-06-14', '18:00:00', 'vbnnjhu', 'srdtryg', 'xnffdr', 5, 0, '2020-06-14 15:00:19', '2020-06-14 15:00:19'),
-(23, 4, 'bbnngtdeee', '2020-06-15', '20:00:00', 'bvcxwqs', 'nbbgg', 'bhfgfd', 6, 0, '2020-06-14 15:10:48', '2020-06-14 15:10:48');
+(23, 4, 'bbnngtdeee', '2020-06-15', '20:00:00', 'bvcxwqs', 'nbbgg', 'bhfgfd', 6, 0, '2020-06-14 15:10:48', '2020-06-14 15:10:48'),
+(25, 12, 'Birthday party', '2019-11-03', '08:00:00', 'Yüka Tunis.', 'Pink ballons , White roses', 'Pink birthday cake , Straweberry juice', 15, 1, '2020-06-15 10:08:25', '2020-06-15 10:22:02'),
+(26, 12, 'Wedding party', '2020-07-01', '20:00:00', 'Andalucia Beach hotel Résidence', 'White candles , Tealight holders , White roses', 'Savory minis , Macaroons , Different juice flavors', 250, 1, '2020-06-15 10:16:57', '2020-06-15 10:16:57'),
+(27, 12, 'Birthday party', '2020-11-03', '20:00:00', 'Yüka Tunis.', 'Pink balloons , White roses', 'Pink birthday cake , Strawberry juice', 20, 0, '2020-06-15 10:20:55', '2020-06-15 10:20:55');
 
 -- --------------------------------------------------------
 
@@ -117,28 +120,17 @@ CREATE TABLE IF NOT EXISTS `packages` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `packages_user_id_foreign` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `packages`
 --
 
 INSERT INTO `packages` (`id`, `user_id`, `package_type`, `photo`, `package_date`, `package_description`, `package_amount`, `created_at`, `updated_at`) VALUES
-(1, 5, 'vero', 'archivage.PNG', '2003-07-19', 'zzeerr', 95.058, '2020-06-13 15:57:55', '2020-06-14 09:23:58'),
-(2, 5, 'quibusdam', 'http://lorempixel.com/640/480/people8', '2006-02-08', 'Necessitatibus repellendus eos totam sapiente atque esse minus.', 7.99, '2020-06-13 15:57:55', '2020-06-13 15:57:55'),
-(3, 7, 'laboriosam', 'http://lorempixel.com/640/480/people2', '1983-04-24', 'Libero temporibus expedita reprehenderit eaque.', 120.763, '2020-06-13 15:57:55', '2020-06-13 15:57:55'),
+(2, 5, 'Gold Wedding', '_125883_epo3.jpg', '2021-01-08', 'Hotel Bizerta Resort, Maximum 100 guests, Savory minis, Different Juice flavors and Macaroons', 7.99, '2020-06-13 15:57:55', '2020-06-15 09:42:34'),
+(3, 7, 'Beach Party', 'gettyimages-150537315-612x612.jpg', '2021-04-24', 'Beach in Sousse, Maximum 50 guests, energy drinks, different juice flavors', 120.763, '2020-06-13 15:57:55', '2020-06-15 09:50:11'),
 (4, 4, 'delectus', 'http://lorempixel.com/640/480/people1', '1998-07-10', 'Nobis dolore eaque eum eos.', 15.418, '2020-06-13 15:57:55', '2020-06-13 15:57:55'),
-(5, 4, 'fugit', 'http://lorempixel.com/640/480/people1', '1999-03-18', 'Et odit nulla eum consequuntur.', 23.222, '2020-06-13 15:57:55', '2020-06-13 15:57:55'),
-(6, 3, 'sed', 'http://lorempixel.com/640/480/people8', '2013-01-31', 'Qui amet impedit possimus quibusdam sed aut.', 76.584, '2020-06-13 15:57:55', '2020-06-13 15:57:55'),
-(7, 10, 'sit', 'http://lorempixel.com/640/480/people1', '1970-06-29', 'Beatae perspiciatis ipsum aliquam ab.', 93.146, '2020-06-13 15:57:55', '2020-06-13 15:57:55'),
-(8, 9, 'ipsam', 'http://lorempixel.com/640/480/people1', '1973-07-31', 'Mollitia non explicabo itaque veniam.', 120.208, '2020-06-13 15:57:55', '2020-06-13 15:57:55'),
-(9, 3, 'nihil', 'http://lorempixel.com/640/480/people1', '1985-05-27', 'Et blanditiis architecto eum blanditiis sed qui.', 104.258, '2020-06-13 15:57:55', '2020-06-13 15:57:55'),
-(10, 8, 'dolorum', 'http://lorempixel.com/640/480/people3', '1995-11-02', 'Earum maiores placeat accusantium sunt qui.', 35.083, '2020-06-13 15:57:55', '2020-06-13 15:57:55'),
-(11, 11, 'wedding', 'C:\\wamp64\\tmp\\phpE8AC.tmp', '2020-06-14', 'azzertyuiio', 2, '2020-06-14 09:15:55', '2020-06-14 09:15:55'),
-(13, 11, 'birthday', 'ajouteradmin.PNG', '2020-06-15', 'bnfderzasx', 8, '2020-06-14 09:28:47', '2020-06-14 10:53:25'),
-(14, 11, 'azsedrftgyh', 'gestionCongé.PNG', '2020-06-15', 'bnnkjhhgg', 6, '2020-06-14 10:48:53', '2020-06-14 10:55:06'),
-(15, 11, 'fgfgygytft', 'C:\\wamp64\\tmp\\phpA2A1.tmp', '2020-06-14', 'vvcffdsese', 3, '2020-06-14 15:16:47', '2020-06-14 15:16:47'),
-(16, 11, 'dgvhjjk', 'C:\\wamp64\\tmp\\php5B9E.tmp', '2020-06-21', 'ccfdse', 3, '2020-06-14 15:21:56', '2020-06-14 15:21:56');
+(5, 4, 'fugit', 'http://lorempixel.com/640/480/people1', '1999-03-18', 'Et odit nulla eum consequuntur.', 23.222, '2020-06-13 15:57:55', '2020-06-13 15:57:55');
 
 -- --------------------------------------------------------
 
@@ -171,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `planners` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `planners`
@@ -179,16 +171,8 @@ CREATE TABLE IF NOT EXISTS `planners` (
 
 INSERT INTO `planners` (`id`, `name`, `photo`, `phone`, `email`, `adress`, `created_at`, `updated_at`) VALUES
 (1, 'Dr. Blake Farrell III', 'http://lorempixel.com/640/480/people/1', '+3887522648145', 'corkery.catharine@example.org', '8740 Corrine Spur Apt. 641\nPort Thurmanshire, AR 90233', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
-(2, 'Thurman Schneider', 'http://lorempixel.com/640/480/people/8', '+2001956001828', 'sporer.elsa@example.com', '1756 McClure Grove\nWest Hester, KY 70772', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (3, 'Dino Hammes', 'http://lorempixel.com/640/480/people/6', '+2329879618358', 'sophia47@example.net', '8788 Leannon Village Suite 215\nShermanshire, MS 21190', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
-(4, 'Madilyn O\'Keefe', 'http://lorempixel.com/640/480/people/7', '+6907419118312', 'xjohns@example.org', '98295 Brock Ways\nSouth Preciousstad, LA 19480-0474', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
-(5, 'Neal Mueller I', 'http://lorempixel.com/640/480/people/3', '+1792566115696', 'tankunding@example.org', '32363 Kassulke Plaza\nEast Efren, UT 87549', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
-(6, 'Dusty Muller', 'http://lorempixel.com/640/480/people/8', '+8018451525362', 'ihauck@example.com', '85615 Alda Ports Suite 723\nSouth Neomamouth, HI 77836', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
-(7, 'Pink Fisher Jr.', 'http://lorempixel.com/640/480/people/6', '+2273336629610', 'samanta89@example.org', '7367 Stark Estates\nOrnfurt, NH 85166-1022', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (8, 'Verla Schuster', 'http://lorempixel.com/640/480/people/1', '+6425478446372', 'mraynor@example.org', '64727 Cartwright Gardens\nAltheaberg, NJ 68768', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
-(9, 'Rosalinda Toy Sr.', 'http://lorempixel.com/640/480/people/5', '+1154591536206', 'xhermann@example.com', '12876 Hettinger Burgs\nSchambergerberg, NJ 01842-0757', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
-(10, 'Callie Predovic DDS', 'http://lorempixel.com/640/480/people/3', '+2007538400177', 'myles76@example.org', '118 Padberg Summit\nNew Rollinland, MS 92181-8039', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
-(11, 'Callie Carter', 'http://lorempixel.com/640/480/people/4', '+7217289381124', 'oran76@example.net', '285 Friesen Burg\nOrlochester, LA 72599-6163', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (12, 'Terrill Schultz', 'http://lorempixel.com/640/480/people/7', '+7903373907714', 'jaquelin33@example.net', '6586 Graciela Fall\nPort Leta, IA 23234', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (13, 'Nova Schmidt', 'http://lorempixel.com/640/480/people/2', '+2730328429567', 'travon.franecki@example.com', '7918 Nader Fork Suite 284\nEast Mable, TN 00904', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (14, 'Santino Schamberger', 'http://lorempixel.com/640/480/people/1', '+2445632155780', 'wiza.kelly@example.net', '78262 Mary Mills\nWymanton, HI 24101', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
@@ -198,11 +182,9 @@ INSERT INTO `planners` (`id`, `name`, `photo`, `phone`, `email`, `adress`, `crea
 (18, 'Mara Fisher', 'http://lorempixel.com/640/480/people/1', '+2964234556542', 'darwin.ullrich@example.com', '167 Christophe Brook\nSouth Baronchester, AL 38654', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (19, 'Kole Bartoletti', 'http://lorempixel.com/640/480/people/2', '+4505905158482', 'greenfelder.alene@example.com', '9077 Wehner Light\nTamarachester, SC 20677', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (20, 'Reece Kautzer Sr.', 'http://lorempixel.com/640/480/people/1', '+6066779309338', 'miles55@example.net', '36239 Alta Ridge\nEast Maritzahaven, MI 61611', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
-(21, 'Martine Koepp PhD', 'http://lorempixel.com/640/480/people/8', '+7668945738871', 'rowan32@example.org', '955 Houston Underpass Suite 600\nWest Rae, CA 66647', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (22, 'Addie Kunde', 'http://lorempixel.com/640/480/people/5', '+1631599676327', 'miller50@example.org', '69410 Kaleb Turnpike\nRunteland, CA 88296-7719', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (23, 'Courtney Gibson', 'http://lorempixel.com/640/480/people/2', '+9282745649021', 'kuphal.assunta@example.org', '812 Moen Club\nDamonview, WV 10252-0008', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (24, 'Green Larkin', 'http://lorempixel.com/640/480/people/7', '+2592936908603', 'assunta55@example.net', '39553 Nikolaus Parks Apt. 386\nJakubowskifurt, NE 00601', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
-(25, 'Mr. Keon Deckow PhD', 'http://lorempixel.com/640/480/people/3', '+1266102127856', 'hettinger.lauriane@example.com', '90643 Crawford Trafficway\nPort Kamren, WA 03010', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (26, 'Lorenz Abernathy', 'http://lorempixel.com/640/480/people/5', '+3334762884431', 'abdullah.grady@example.org', '24003 Madaline Club\nLake Joanniemouth, NE 35579-8321', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (27, 'Neoma Denesik', 'http://lorempixel.com/640/480/people/7', '+8764788037868', 'runolfsdottir.wilhelm@example.com', '90915 Felicia Common Apt. 012\nPort Briachester, IL 48543', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (28, 'Felton Yost', 'http://lorempixel.com/640/480/people/5', '+2088762827450', 'sarina71@example.net', '621 Hills Square Suite 428\nSouth Imelda, UT 70754-1475', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
@@ -231,14 +213,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `adress`, `phone`, `admin`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Trudie Becker', 'von.grant@example.com', '2020-06-13 15:57:54', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '98053 Florence Stravenue\nNikolausbury, CA 67137', '+7110956434324', 0, 'zOxmEHK0DUcvK2KUhgoEbc7INvpCl4FSQGXqXIUhez6zoDPuafnrQ6e0xs0S', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
+(1, 'Trudie Becker', 'von.grant@example.com', '2020-06-13 15:57:54', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '98053 Florence Stravenue\nNikolausbury, CA 67137', '+7110956434324', 0, 'hEbjvjqf8HAxBEbiWRmiF2i8nfWEJzsU5JiNMohIjnTL7fNu44JAreWzjDDr', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (2, 'Mrs. Berneice Mayer I', 'kerluke.opal@example.org', '2020-06-13 15:57:54', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '41339 Emmerich Drive Suite 864\nPort Rubyeburgh, RI 56657-0310', '+5526589865103', 0, 'Ni3rQu360zM9M7qZOPWaazIQA9om4jIMN4Vu1gsNEhcupdlUUrVSWymRnJDP', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (3, 'Dovie Beier', 'taurean70@example.net', '2020-06-13 15:57:54', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '2374 Durgan Forest\nMoriahville, WV 07980-2137', '+9522174825670', 0, 'FuVKKIzqApDYdKYqlqT0mXalL5E3gwtVwLnOOHyz8gBR2WjPkwNk5xs60Jki', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (4, 'Miss Gilda Murazik Jr.', 'casper.delta@example.com', '2020-06-13 15:57:54', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '56087 Torey Plains Apt. 891\nKyliestad, ID 48612', '+6491621944444', 0, 'VR61BQJWWtrHSFIEQzD0c4N621abnaW7ahKLW8rIvjVTKK0QUUVdeQWfmhCg', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
@@ -248,7 +230,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ad
 (8, 'Miss Rosetta Willms III', 'felipa.labadie@example.net', '2020-06-13 15:57:54', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '47435 Daniela Point Suite 103\nNorth Rachael, IA 98511', '+3969420627875', 0, 'g9OYGUtdnyJD5XcH5zNi5GLmSY5HJbq78ggiELVyBZbwxT1o0TBl9wvwyMBS', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (9, 'Miss Nya Torphy IV', 'bboehm@example.org', '2020-06-13 15:57:54', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '70275 Nicklaus Park Suite 976\nEast Eldora, MN 51573-2985', '+6674050243923', 0, '08mKZt5mnc', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
 (10, 'Pearl Schamberger', 'ewalter@example.com', '2020-06-13 15:57:54', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '436 Nader Lane Suite 185\nHarrytown, CT 78851-8306', '+1191086241748', 0, 'jg5TaQHHFq', '2020-06-13 15:57:54', '2020-06-13 15:57:54'),
-(11, 'Ibtissem Bejaoui', 'ibtissembejaoui7@gmail.com', NULL, '$2y$10$5heLxbNbkb39v.5jCP.1tufvjV/tJ8w3wg3.9aABPDO5r0iObCu4m', 'Bizerte', '28446727', 1, NULL, '2020-06-13 15:59:26', '2020-06-13 15:59:26');
+(11, 'Ibtissem Bejaoui', 'ibtissembejaoui7@gmail.com', NULL, '$2y$10$5heLxbNbkb39v.5jCP.1tufvjV/tJ8w3wg3.9aABPDO5r0iObCu4m', 'Bizerte', '28446727', 1, NULL, '2020-06-13 15:59:26', '2020-06-13 15:59:26'),
+(12, 'Hedil Saidani', 'hedilsaidani8@gmail.com', NULL, '$2y$10$Txqwb5z0dfQH.HVJPOkb/uVwJA.nrGSWXNTb5voQX1GZgWh1m01Wq', 'Cité ENNASR Bizerte', '58004930', 0, NULL, '2020-06-15 09:52:38', '2020-06-15 09:52:38');
 
 --
 -- Contraintes pour les tables déchargées
